@@ -1,4 +1,5 @@
 ﻿import { Component } from "@angular/core";
+import { IMovie } from "./movie";
 
 @Component({
     moduleId: module.id,
@@ -13,7 +14,7 @@ export class MoviesListComponent {
     showPoster: boolean = true;
     listFilter: string = 'Titanic';
 
-    movies: any[] = [
+    movies: IMovie[] = [
         {
             "movieId": 2,
             "movieName": "Titanic!",
