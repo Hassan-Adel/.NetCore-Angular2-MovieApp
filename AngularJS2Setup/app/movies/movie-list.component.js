@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var movie_filter_pipe_1 = require('./movie-filter.pipe');
 var MoviesListComponent = (function () {
     function MoviesListComponent() {
         this.pageTitle = "Movies List";
@@ -49,7 +50,8 @@ var MoviesListComponent = (function () {
             moduleId: module.id,
             selector: "mm-movies",
             templateUrl: "movie-list.component.html",
-            styleUrls: ["movie-list.component.css"]
+            styleUrls: ["movie-list.component.css"],
+            pipes: [movie_filter_pipe_1.MovieFilterPipe]
         }), 
         __metadata('design:paramtypes', [])
     ], MoviesListComponent);
