@@ -41,6 +41,9 @@ var MoviesListComponent = (function () {
     MoviesListComponent.prototype.toggleImage = function () {
         this.showPoster = !this.showPoster;
     };
+    MoviesListComponent.prototype.ngOnInit = function () {
+        console.log('Invoked : ngOnInit');
+    };
     MoviesListComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
