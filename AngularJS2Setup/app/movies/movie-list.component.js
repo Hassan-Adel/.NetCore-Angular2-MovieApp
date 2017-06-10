@@ -15,6 +15,7 @@ var MoviesListComponent = (function () {
         this.imageWidth = 50;
         this.imaegMargin = 2;
         this.showPoster = true;
+        this.listFilter = 'Titanic';
         this.movies = [
             {
                 "movieId": 2,

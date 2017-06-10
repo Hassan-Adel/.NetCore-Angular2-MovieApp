@@ -11,6 +11,7 @@ export class MoviesListComponent {
     imageWidth: number = 50;
     imaegMargin: number = 2;
     showPoster: boolean = true;
+    listFilter: string = 'Titanic';
 
     movies: any[] = [
         {
