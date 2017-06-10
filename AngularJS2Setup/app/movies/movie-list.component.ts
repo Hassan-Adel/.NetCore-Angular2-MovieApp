@@ -8,6 +8,8 @@
 
 export class MoviesListComponent {
     pageTitle: string = "Movies List";
+    imageWidth: number = 50;
+    imaegMargin: number = 2;
 
     movies: any[] = [
         {
@@ -28,7 +30,7 @@ export class MoviesListComponent {
             "releaseDate": "4/13/2016",
             "price": 6.00,
             "starRating": 4.8,
-            "imageUrl": "http://ia.media-imdb.com/images/M/MV5BNDcxODkyMjY4MF5BMl5BanBnXkFtZTgwOTk5NTc5MDE@._V1_SY1000_CR0,0,666,1000_AL_.jpg"
+            "imageUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMmVmODY1MzEtYTMwZC00MzNhLWFkNDMtZjAwM2EwODUxZTA5XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX651_CR0,0,651,999_AL_.jpg"
         }];
 
 }

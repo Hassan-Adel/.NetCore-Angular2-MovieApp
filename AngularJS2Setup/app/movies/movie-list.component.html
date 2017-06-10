@@ -34,7 +34,8 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="#movie of movies">
-                        <td></td>
+                        <td><img [src]="movie.imageUrl" [title]="movie.movieName"
+                                 [style.width.px]="imageWidth" [style.margin.px]="imageMargin" /></td>
                         <td>{{movie.movieName}}</td>
                         <td>{{movie.movieStar}}</td>
                         <td>{{movie.releaseDate}}</td>
