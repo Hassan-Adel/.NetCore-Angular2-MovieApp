@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class='row'>
-            <div class='col-md-6' *ngiF="listFilter">
+            <div class='col-md-6' *ngIf="listFilter">
                 <h3>Searching: {{listFilter}}</h3>
             </div>
         </div>
@@ -37,9 +37,9 @@
                         <td><img [src]="movie.imageUrl" [title]="movie.movieName"  *ngIf='showPoster'
                                  [style.width.px]="imageWidth" [style.margin.px]="imageMargin" /></td>
                         <td>{{movie.movieName}}</td>
-                        <td>{{movie.movieStar}}</td>
+                        <td>{{movie.movieStar | uppercase}}</td>
                         <td>{{movie.releaseDate}}</td>
-                        <td>{{movie.price}}</td>
+                        <td>{{movie.price | currency:'USD':true:'1.2-2'}}</td><!--'1.2-2' : is to specify we want at least one number to the left of the decimal place.And two, and only two numbers, to the right of the decimal place-->
                         <td>{{movie.starRating}}</td>
                     </tr> 
                 </tbody>
