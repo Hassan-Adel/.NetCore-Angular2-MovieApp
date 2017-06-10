@@ -1,4 +1,4 @@
-﻿import { Component } from "@angular/core";
+﻿import { Component, OnInit } from "@angular/core";
 import { IMovie } from "./movie";
 
 @Component({
@@ -8,7 +8,7 @@ import { IMovie } from "./movie";
     styleUrls: ["movie-list.component.css"]
 })
 
-export class MoviesListComponent {
+export class MoviesListComponent implements OnInit {
     pageTitle: string = "Movies List";
     imageWidth: number = 50;
     imaegMargin: number = 2;
@@ -39,6 +39,10 @@ export class MoviesListComponent {
 
     toggleImage(): void {
         this.showPoster = !this.showPoster;
+    }
+
+    ngOnInit(): void {
+        console.log('Invoked : ngOnInit');
     }
 
 }
