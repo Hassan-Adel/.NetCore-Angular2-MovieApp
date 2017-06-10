@@ -10,6 +10,7 @@ export class MoviesListComponent {
     pageTitle: string = "Movies List";
     imageWidth: number = 50;
     imaegMargin: number = 2;
+    showPoster: boolean = true;
 
     movies: any[] = [
         {
@@ -32,5 +33,9 @@ export class MoviesListComponent {
             "starRating": 4.8,
             "imageUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMmVmODY1MzEtYTMwZC00MzNhLWFkNDMtZjAwM2EwODUxZTA5XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX651_CR0,0,651,999_AL_.jpg"
         }];
+
+    toggleImage(): void {
+        this.showPoster = !this.showPoster;
+    }
 
 }

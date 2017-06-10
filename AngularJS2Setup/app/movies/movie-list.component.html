@@ -21,8 +21,8 @@
                 <thead>
                     <tr>
                         <th>
-                            <button class='btn btn-primary'>
-                                Show Poster
+                            <button class='btn btn-primary' (click)="this.toggleImage() ">
+                                {{showPoster ? 'Hide' : 'Show' }} Posters
                             </button>
                         </th>
                         <th>Movie</th>
@@ -33,8 +33,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="#movie of movies">
-                        <td><img [src]="movie.imageUrl" [title]="movie.movieName"
+                    <tr *ngFor="let movie of movies">
+                        <td><img [src]="movie.imageUrl" [title]="movie.movieName"  *ngIf='showPoster'
                                  [style.width.px]="imageWidth" [style.margin.px]="imageMargin" /></td>
                         <td>{{movie.movieName}}</td>
                         <td>{{movie.movieStar}}</td>

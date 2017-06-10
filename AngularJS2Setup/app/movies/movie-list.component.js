@@ -14,6 +14,7 @@ var MoviesListComponent = (function () {
         this.pageTitle = "Movies List";
         this.imageWidth = 50;
         this.imaegMargin = 2;
+        this.showPoster = true;
         this.movies = [
             {
                 "movieId": 2,
@@ -36,6 +37,9 @@ var MoviesListComponent = (function () {
                 "imageUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMmVmODY1MzEtYTMwZC00MzNhLWFkNDMtZjAwM2EwODUxZTA5XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX651_CR0,0,651,999_AL_.jpg"
             }];
     }
+    MoviesListComponent.prototype.toggleImage = function () {
+        this.showPoster = !this.showPoster;
+    };
     MoviesListComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
