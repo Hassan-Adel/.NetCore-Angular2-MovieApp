@@ -9,20 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var movie_list_component_1 = require("./movies/movie-list.component");
-var AppComponent = (function () {
-    function AppComponent() {
+var MoviesListComponent = (function () {
+    function MoviesListComponent() {
         this.WelcomeMessage = "Welcome to my site";
     }
-    AppComponent = __decorate([
+    MoviesListComponent = __decorate([
         core_1.Component({
-            selector: "my-app",
-            template: "<h1>{{WelcomeMessage}}</h1>\n            <div>\n            <mm-movies></mm-movies>\n            </div>\n            ",
-            directives: [movie_list_component_1.MoviesListComponent]
+            moduleId: module.id,
+            selector: "mm-movies",
+            templateUrl: "movie-list.component.html"
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], MoviesListComponent);
+    return MoviesListComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.MoviesListComponent = MoviesListComponent;
+//# sourceMappingURL=movie-list.component.js.map

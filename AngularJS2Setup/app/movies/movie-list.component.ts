@@ -2,8 +2,8 @@
 
 @Component({
     moduleId: module.id,
-    selector: "my-app",
-    templateUrl: "movies-list.component.html"
+    selector: "mm-movies",
+    templateUrl: "movie-list.component.html"
 })
 
 export class MoviesListComponent {
