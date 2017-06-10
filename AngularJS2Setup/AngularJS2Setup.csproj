@@ -93,6 +93,7 @@
   <ItemGroup>
     <Content Include="app\assets\images\logo.jpg" />
     <Content Include="app\home\welcome.component.html" />
+    <Content Include="app\movies\movie-list.component.css" />
     <Content Include="app\movies\movie-list.component.html" />
     <Content Include="app\shared\review.component.css" />
     <Content Include="app\shared\review.component.html" />

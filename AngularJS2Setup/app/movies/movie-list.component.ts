@@ -4,7 +4,8 @@ import { IMovie } from "./movie";
 @Component({
     moduleId: module.id,
     selector: "mm-movies",
-    templateUrl: "movie-list.component.html"
+    templateUrl: "movie-list.component.html",
+    styleUrls: ["movie-list.component.css"]
 })
 
 export class MoviesListComponent {
