@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var movie_filter_pipe_1 = require('./movie-filter.pipe');
+var review_component_1 = require('../shared/review.component');
 var MoviesListComponent = (function () {
     function MoviesListComponent() {
         this.pageTitle = "Movies List";
@@ -45,13 +46,17 @@ var MoviesListComponent = (function () {
     MoviesListComponent.prototype.ngOnInit = function () {
         console.log('Invoked : ngOnInit');
     };
+    MoviesListComponent.prototype.onRatingClicked = function (message) {
+        this.pageTitle = 'Movie List : ' + message;
+    };
     MoviesListComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: "mm-movies",
             templateUrl: "movie-list.component.html",
             styleUrls: ["movie-list.component.css"],
-            pipes: [movie_filter_pipe_1.MovieFilterPipe]
+            pipes: [movie_filter_pipe_1.MovieFilterPipe],
+            directives: [review_component_1.ReviewComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], MoviesListComponent);

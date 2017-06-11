@@ -1,13 +1,15 @@
 ﻿import { Component, OnInit } from "@angular/core";
 import { IMovie } from "./movie";
 import { MovieFilterPipe } from './movie-filter.pipe';
+import { ReviewComponent } from '../shared/review.component';
 
 @Component({
     moduleId: module.id,
     selector: "mm-movies",
     templateUrl: "movie-list.component.html",
     styleUrls: ["movie-list.component.css"],
-    pipes: [MovieFilterPipe]
+    pipes: [MovieFilterPipe],
+    directives: [ReviewComponent ]
 })
 
 export class MoviesListComponent implements OnInit {
@@ -46,5 +48,7 @@ export class MoviesListComponent implements OnInit {
     ngOnInit(): void {
         console.log('Invoked : ngOnInit');
     }
-
+    onRatingClicked(message: string): void {
+        this.pageTitle = 'Movie List : ' + message;
+    }
 }

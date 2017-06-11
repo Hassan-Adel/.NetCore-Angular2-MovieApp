@@ -40,7 +40,9 @@
                         <td>{{movie.movieStar | uppercase}}</td>
                         <td>{{movie.releaseDate}}</td>
                         <td>{{movie.price | currency:'USD':true:'1.2-2'}}</td><!--'1.2-2' : is to specify we want at least one number to the left of the decimal place.And two, and only two numbers, to the right of the decimal place-->
-                        <td>{{movie.starRating}}</td>
+                        <!--<td>{{movie.starRating}}</td>-->
+                        <td><md-movies [rating]="movie.starRating"
+                                       (ratingClicked)="onRatingClicked($event)"></md-movies></td>
                     </tr> 
                 </tbody>
             </table>
