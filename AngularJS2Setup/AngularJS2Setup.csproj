@@ -152,6 +152,7 @@
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\movies\movie-filter.pipe.ts" />
     <TypeScriptCompile Include="app\movies\movie-list.component.ts" />
+    <TypeScriptCompile Include="app\movies\movie.service.ts" />
     <TypeScriptCompile Include="app\movies\movie.ts" />
     <TypeScriptCompile Include="app\shared\review.component.ts" />
   </ItemGroup>

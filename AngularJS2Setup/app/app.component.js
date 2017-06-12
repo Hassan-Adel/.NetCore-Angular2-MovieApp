@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var movie_list_component_1 = require("./movies/movie-list.component");
+var movie_service_1 = require("./movies/movie.service");
 var AppComponent = (function () {
     function AppComponent() {
         this.WelcomeMessage = "Welcome to my site";
@@ -18,7 +19,8 @@ var AppComponent = (function () {
         core_1.Component({
             selector: "my-app",
             template: "<h1>{{WelcomeMessage}}</h1>\n            <div>\n            <mm-movies></mm-movies>\n            </div>\n            ",
-            directives: [movie_list_component_1.MoviesListComponent]
+            directives: [movie_list_component_1.MoviesListComponent],
+            providers: [movie_service_1.MovieService]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
