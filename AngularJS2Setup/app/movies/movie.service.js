@@ -8,45 +8,33 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-require('rxjs/add/operator/map');
-require('rxjs/add/operator/do');
-require('rxjs/add/operator/catch');
-require('rxjs/add/observable/throw');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+var Observable_1 = require("rxjs/Observable");
 //import 'rxjs/RX'
 var MovieService = (function () {
-    function MovieService() {
+    function MovieService(_http) {
+        this._http = _http;
+        this._movieUrl = 'api/movies/movies.json';
     }
-    //constructor(private _http: Http) { }
+    //do lets us log a message after data is recieved
     MovieService.prototype.getMovies = function () {
-        //do lets us log a message after data is recieved
-        return [
-            {
-                "movieId": 2,
-                "movieName": "Titanic2!",
-                "movieStar": "DiCaprio",
-                "description": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
-                "releaseDate": "3/13/2016",
-                "price": 8.00,
-                "starRating": 4.5,
-                "imageUrl": "http://ia.media-imdb.com/images/M/MV5BMzg1MDA0MTU2Nl5BMl5BanBnXkFtZTcwMTMzMjkxNw@@._V1_.jpg"
-            },
-            {
-                "movieId": 3,
-                "movieName": "Jaws!",
-                "movieStar": "Shaw",
-                "description": "When a gigantic great white shark begins to menace the small island community of Amity, a police chief, a marine scientist and a grizzled fisherman set out to stop it.",
-                "releaseDate": "4/13/2016",
-                "price": 6.00,
-                "starRating": 4.8,
-                "imageUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMmVmODY1MzEtYTMwZC00MzNhLWFkNDMtZjAwM2EwODUxZTA5XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX651_CR0,0,651,999_AL_.jpg"
-            }];
+        return this._http.get(this._movieUrl)
+            .map(function (response) { return response.json(); })
+            .do(function (data) { return console.log("All: " + JSON.stringify(data)); })
+            .catch(this.handleError);
     };
-    MovieService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
-    ], MovieService);
+    MovieService.prototype.handleError = function (error) {
+        console.error(error);
+        var message = "Error status code " + error.status + " at " + error.url;
+        return Observable_1.Observable.throw(message);
+    };
     return MovieService;
 }());
+MovieService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], MovieService);
 exports.MovieService = MovieService;
 //# sourceMappingURL=movie.service.js.map

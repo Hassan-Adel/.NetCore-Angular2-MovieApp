@@ -8,9 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var movie_filter_pipe_1 = require('./movie-filter.pipe');
-var review_component_1 = require('../shared/review.component');
+var movie_filter_pipe_1 = require("./movie-filter.pipe");
+var review_component_1 = require("../shared/review.component");
 var movie_service_1 = require("./movie.service");
 var MoviesListComponent = (function () {
     function MoviesListComponent(_movieService) {
@@ -24,24 +25,26 @@ var MoviesListComponent = (function () {
         this.showPoster = !this.showPoster;
     };
     MoviesListComponent.prototype.ngOnInit = function () {
-        this.movies = this._movieService.getMovies();
+        var _this = this;
+        this._movieService.getMovies()
+            .subscribe(function (myMovies) { return _this.movies = myMovies; }, function (error) { return _this.errorMessage = error; });
         console.log('Invoked : ngOnInit');
     };
     MoviesListComponent.prototype.onRatingClicked = function (message) {
         this.pageTitle = 'Movie List : ' + message;
     };
-    MoviesListComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: "mm-movies",
-            templateUrl: "movie-list.component.html",
-            styleUrls: ["movie-list.component.css"],
-            pipes: [movie_filter_pipe_1.MovieFilterPipe],
-            directives: [review_component_1.ReviewComponent]
-        }), 
-        __metadata('design:paramtypes', [movie_service_1.MovieService])
-    ], MoviesListComponent);
     return MoviesListComponent;
 }());
+MoviesListComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: "mm-movies",
+        templateUrl: "movie-list.component.html",
+        styleUrls: ["movie-list.component.css"],
+        pipes: [movie_filter_pipe_1.MovieFilterPipe],
+        directives: [review_component_1.ReviewComponent]
+    }),
+    __metadata("design:paramtypes", [movie_service_1.MovieService])
+], MoviesListComponent);
 exports.MoviesListComponent = MoviesListComponent;
 //# sourceMappingURL=movie-list.component.js.map

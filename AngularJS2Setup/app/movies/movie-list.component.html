@@ -17,7 +17,8 @@
         </div>
         <!-- table -->
         <div class='table-responsive'>
-            <table class='table' *ngIf='movies.length'>
+            <!-- movies : if movies not null -->
+            <table class='table' *ngIf='movies && movies.length'>
                 <thead>
                     <tr>
                         <th>

@@ -19,6 +19,7 @@ export class MoviesListComponent implements OnInit {
     imaegMargin: number = 2;
     showPoster: boolean = true;
     listFilter: string;
+    errorMessage: string;
 
     movies: IMovie[];
 
@@ -29,7 +30,9 @@ export class MoviesListComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.movies = this._movieService.getMovies();
+        this._movieService.getMovies()
+            .subscribe(myMovies => this.movies = myMovies,
+            error => this.errorMessage = <any>error);
         console.log('Invoked : ngOnInit');
     }
     onRatingClicked(message: string): void {

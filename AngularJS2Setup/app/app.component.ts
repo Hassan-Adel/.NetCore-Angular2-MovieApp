@@ -1,6 +1,8 @@
 ﻿import { Component } from "@angular/core";
 import { MoviesListComponent } from "./movies/movie-list.component";
 import { MovieService } from "./movies/movie.service";
+import { HTTP_PROVIDERS } from '@angular/http';
+import 'rxjs/RX'; //Load all features
 
 @Component({
     selector: "my-app",
@@ -10,7 +12,7 @@ import { MovieService } from "./movies/movie.service";
             </div>
             `,
     directives: [MoviesListComponent],
-    providers: [ MovieService ]
+    providers: [ MovieService, HTTP_PROVIDERS ]
 })
 
 export class AppComponent {
