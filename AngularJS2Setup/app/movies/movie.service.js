@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 var Observable_1 = require("rxjs/Observable");
-//import 'rxjs/RX'
+require("rxjs/RX");
 var MovieService = (function () {
     function MovieService(_http) {
         this._http = _http;
@@ -29,6 +29,11 @@ var MovieService = (function () {
         console.error(error);
         var message = "Error status code " + error.status + " at " + error.url;
         return Observable_1.Observable.throw(message);
+    };
+    // Added for routing
+    MovieService.prototype.getMovie = function (id) {
+        return this.getMovies()
+            .map(function (movies) { return movies.find(function (m) { return m.movieId === id; }); });
     };
     return MovieService;
 }());

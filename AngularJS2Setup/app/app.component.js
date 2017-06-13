@@ -7,22 +7,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var movie_list_component_1 = require("./movies/movie-list.component");
-var movie_service_1 = require("./movies/movie.service");
-var http_1 = require("@angular/http");
-require("rxjs/RX"); //Load all features
 var AppComponent = (function () {
     function AppComponent() {
-        this.WelcomeMessage = "Welcome to my site";
+        this.welcomeMessage = "Welcome to My .NET Angular 2 project!!";
+        this.pageTitle = "The Premiere Movie Database";
     }
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: "my-app",
-        template: "<h1>{{WelcomeMessage}}</h1>\n            <div>\n            <mm-movies></mm-movies>\n            </div>\n            ",
-        directives: [movie_list_component_1.MoviesListComponent],
-        providers: [movie_service_1.MovieService, http_1.HTTP_PROVIDERS]
+        template: "\n                <div>\n                    <nav class='navbar navbar-default'>\n                        <div class='container-fluid'>\n                            <a class='navbar-brand'>{{pageTitle}}</a>\n                            <ul class='nav navbar-nav'>\n                                <li><a [routerLink]=\"['welcome']\">Home</a></li>\n                                <li><a [routerLink]=\"['movies']\">Movie List</a></li>\n                            </ul>\n                        </div>\n                    </nav>\n                    <div class='container'>\n                        <router-outlet></router-outlet>\n                    </div>\n                 </div>\n                "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

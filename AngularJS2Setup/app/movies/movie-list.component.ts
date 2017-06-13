@@ -1,41 +1,40 @@
-﻿import { Component, OnInit } from "@angular/core";
-import { IMovie } from "./movie";
+﻿import { Component, OnInit } from '@angular/core';
+import { IMovie } from './movie';
 import { MovieFilterPipe } from './movie-filter.pipe';
 import { ReviewComponent } from '../shared/review.component';
-import { MovieService } from "./movie.service";
+import { MovieService } from './movie.service';
 
 @Component({
-    moduleId: module.id,
-    selector: "mm-movies",
-    templateUrl: "movie-list.component.html",
-    styleUrls: ["movie-list.component.css"],
+    selector: 'mm-movies',
+    templateUrl: 'app/movies/movie-list.component.html',
+    styleUrls: ['app/movies/movie-list.component.css'],
     pipes: [MovieFilterPipe],
-    directives: [ReviewComponent ]
+    directives: [ReviewComponent]
 })
 
-export class MoviesListComponent implements OnInit {
-    pageTitle: string = "Movies List";
+export class MovieListComponent implements OnInit {
+    pageTitle: string = 'Movie List';
     imageWidth: number = 50;
-    imaegMargin: number = 2;
-    showPoster: boolean = true;
+    imageMargin: number = 2;
+    seePoster: boolean = false;
     listFilter: string;
     errorMessage: string;
 
     movies: IMovie[];
 
-    constructor(private _movieService: MovieService) { }
+    constructor(private _movieService: MovieService) {
+    }
 
     toggleImage(): void {
-        this.showPoster = !this.showPoster;
+        this.seePoster = !this.seePoster;
     }
-
     ngOnInit(): void {
         this._movieService.getMovies()
-            .subscribe(myMovies => this.movies = myMovies,
+            .subscribe(movies => this.movies = movies,
             error => this.errorMessage = <any>error);
-        console.log('Invoked : ngOnInit');
     }
     onRatingClicked(message: string): void {
-        this.pageTitle = 'Movie List : ' + message;
+        this.pageTitle = 'Movie List: ' + message;
     }
+
 }

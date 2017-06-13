@@ -1,20 +1,27 @@
 ﻿import { Component } from "@angular/core";
-import { MoviesListComponent } from "./movies/movie-list.component";
-import { MovieService } from "./movies/movie.service";
-import { HTTP_PROVIDERS } from '@angular/http';
-import 'rxjs/RX'; //Load all features
+
 
 @Component({
     selector: "my-app",
-    template: `<h1>{{WelcomeMessage}}</h1>
-            <div>
-            <mm-movies></mm-movies>
-            </div>
-            `,
-    directives: [MoviesListComponent],
-    providers: [ MovieService, HTTP_PROVIDERS ]
+    template: `
+                <div>
+                    <nav class='navbar navbar-default'>
+                        <div class='container-fluid'>
+                            <a class='navbar-brand'>{{pageTitle}}</a>
+                            <ul class='nav navbar-nav'>
+                                <li><a [routerLink]="['welcome']">Home</a></li>
+                                <li><a [routerLink]="['movies']">Movie List</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class='container'>
+                        <router-outlet></router-outlet>
+                    </div>
+                 </div>
+                `
 })
 
 export class AppComponent {
-WelcomeMessage: string = "Welcome to my site"
+    welcomeMessage: string = "Welcome to My .NET Angular 2 project!!";
+    pageTitle: string = "The Premiere Movie Database";
 }

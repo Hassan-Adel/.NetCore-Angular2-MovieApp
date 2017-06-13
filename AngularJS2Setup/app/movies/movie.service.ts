@@ -2,7 +2,7 @@
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { IMovie } from "./movie";
-//import 'rxjs/RX'
+import 'rxjs/RX'
 
 @Injectable()
 export class MovieService {
@@ -23,6 +23,12 @@ export class MovieService {
         let message = `Error status code ${error.status} at ${error.url}`;
         return Observable.throw(message);
 
+    }
+
+    // Added for routing
+    getMovie(id: number): Observable<IMovie> {
+        return this.getMovies()
+            .map((movies: IMovie[]) => movies.find(m => m.movieId === id));
     }
 
 }

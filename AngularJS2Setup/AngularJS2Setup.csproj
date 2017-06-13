@@ -93,6 +93,7 @@
   <ItemGroup>
     <Content Include="app\assets\images\logo.jpg" />
     <Content Include="app\home\welcome.component.html" />
+    <Content Include="app\movies\movie-detail.component.html" />
     <Content Include="app\movies\movie-list.component.css" />
     <Content Include="app\movies\movie-list.component.html" />
     <Content Include="app\shared\review.component.css" />
@@ -148,13 +149,18 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
+    <TypeScriptCompile Include="app\app.routing.ts" />
     <TypeScriptCompile Include="app\home\welcome.component.ts" />
     <TypeScriptCompile Include="app\main.ts" />
+    <TypeScriptCompile Include="app\movies\movie-detail.component.ts" />
     <TypeScriptCompile Include="app\movies\movie-filter.pipe.ts" />
     <TypeScriptCompile Include="app\movies\movie-list.component.ts" />
+    <TypeScriptCompile Include="app\movies\movie.module.ts" />
+    <TypeScriptCompile Include="app\movies\movie.routing.ts" />
     <TypeScriptCompile Include="app\movies\movie.service.ts" />
     <TypeScriptCompile Include="app\movies\movie.ts" />
     <TypeScriptCompile Include="app\shared\review.component.ts" />
+    <TypeScriptCompile Include="app\shared\shared.module.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
