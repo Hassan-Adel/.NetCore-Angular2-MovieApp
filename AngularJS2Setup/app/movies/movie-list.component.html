@@ -35,7 +35,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let movie of movies | movieFilter:listFilter">
-                        <td><img [src]="movie.imageUrl" [title]="movie.movieName"  *ngIf='showPoster'
+                        <td><img [src]="movie.imageUrl" [title]="movie.movieName"  *ngIf='seePoster'
                                  [style.width.px]="imageWidth" [style.margin.px]="imageMargin" /></td>
                         <td>
                             <a [routerLink]="['/movie', movie.movieId]">
